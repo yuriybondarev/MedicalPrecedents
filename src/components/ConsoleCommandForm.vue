@@ -1,5 +1,5 @@
 <template>
-  <form id="console-command-form" method="POST" @submit.prevent="submitConsole">
+  <form id="console-command-form" @submit.prevent="submitConsole">
     <input v-model="consoleCommand" name="console-command" placeholder="Введите запрос" />
     <button>
       <fa-icon icon="arrow-right"/>

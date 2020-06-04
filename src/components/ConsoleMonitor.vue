@@ -1,11 +1,12 @@
 <template>
-    <transition-group 
-      tag="div"
-      id="console-monitor"
-      enter-active-class="animate__animated animate__bounceInLeft animate__fast"
-    >
-      <console-command v-for="(command, index) in commands" :key="index" :command="command"/>
-    </transition-group>
+    <div id="console-monitor" @dblclick="clearMonitor">
+      <transition-group 
+        tag="div"
+        enter-active-class="animate__animated animate__bounceInLeft animate__fast"
+      >
+        <console-command v-for="(command, index) in commands" :key="index" :command="command"/>
+      </transition-group>
+    </div>
 </template>
 
 <script>
@@ -15,6 +16,11 @@
   export default {
     name: "ConsoleMonitor",
     computed: mapGetters('console', ['commands']),
+    methods: {
+      clearMonitor() {
+        this.$store.commit("console/clearCommands");
+      }
+    },
     components: {
       ConsoleCommand
     }

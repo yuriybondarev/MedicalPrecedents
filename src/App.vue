@@ -63,6 +63,10 @@
     margin: 0 auto;
   }
 
+  input, select, button {
+    font-size: 1em;
+  }
+
   .form-model input:not(.not-block-input), .form-model button, .form-model select {
     display: block;
     width: 100%;

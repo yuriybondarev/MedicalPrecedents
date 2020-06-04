@@ -1,5 +1,5 @@
 <template>
-  <table id="finded-precedents-table">
+  <table id="finded-precedents-table" @dblclick="clearTable">
     <thead>
       <tr>
         <td v-for="(param, index) in params" :key="index">{{ param }}</td>
@@ -7,7 +7,7 @@
     </thead>
     <transition-group 
       tag="tbody"
-      enter-active-class="animate__animated animate__bounceInLeft animate__fast"
+      enter-active-class="animate__animated animate__fadeIn animate__fast"
     >
       <tr v-for="(precedent, index) in precedents" :key="index">
         <td>{{ precedent.name }}</td>
@@ -68,6 +68,11 @@
           "RT"
         ]
       };
+    },
+    methods: {
+      clearTable() {
+        this.$store.commit("precedents/clearPrecedents");
+      }
     }
   };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <form id="add-precedent-form" method="POST">
+  <form id="add-precedent-form">
     <div>
       <div>
         <div>
@@ -53,11 +53,13 @@
           <option value="0" disabled selected>Выберите анамнез</option>
           <option value="1">1</option>
           <option value="2">2</option>
+          <option value="3">3</option>
         </select>
         <select name="vessels-state" id="vessels-state-select">
           <option value="0" disabled selected>Выберите состояние сосудов</option>
           <option value="1">Риск</option>
-          <option value="2">ТребНабл</option>
+          <option value="2">Требуется наблюдение</option>
+          <option value="3">Высокий риск</option>
         </select>
       </div>
       <div>

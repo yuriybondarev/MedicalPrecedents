@@ -112,10 +112,12 @@
         <select name="anamnesys" id="anamnesys-select" multiple>
           <option value="1">1</option>
           <option value="2">2</option>
+          <option value="3">3</option>
         </select>
         <select name="vessels-state" id="vessels-state-select" multiple>
           <option value="1">Риск</option>
-          <option value="2">ТребНабл</option>
+          <option value="2">Требуется наблюдение</option>
+          <option value="3">Высокий риск</option>
         </select>
       </div>
       <div>
@@ -371,7 +373,7 @@
         </div>
       </div>
     </div>
-    <button>Найти прецеденты</button>
+    <button type="button" @click="submitFind">Найти прецеденты</button>
   </form>
 </template>
 
@@ -380,10 +382,32 @@
     name: "FindPrecedentsForm",
     methods: {
       submitFind() {
-        let precedent = {};
+        let precedent = {
+          name: "Аркадий",
+          surname: "Паровозов",
+          gender: "м",
+          age: 12,
+          height: 2.3,
+          weight: 64,
+          type: null,
+          anamnesys: 1,
+          vesselsState: "Риск",
+          bmi: 2,
+          wc: 1,
+          si: 3,
+          sbp: 4,
+          dbp: 2,
+          mbp: 6,
+          pbp: 3,
+          hr: 3,
+          aai: 8,
+          ed: 2,
+          fdi: 4,
+          rt: 1
+        };
 
         this.$store.commit("precedents/addPrecedent", precedent);
       }
     }
-  }
+  };
 </script>

@@ -6,6 +6,11 @@ export default {
   mutations: {
     addCommand: (state, command) => {
       state.commands.push(command);
+    },
+    clearCommands: (state) => {
+      while(state.commands.length) {
+        state.commands.pop();
+      }
     }
   },
   actions: {

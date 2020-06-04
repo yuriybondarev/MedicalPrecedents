@@ -5,7 +5,12 @@ export default {
   },
   mutations: {
     addPrecedent: (state, precedent) => {
-      state.commands.push(precedent);
+      state.precedents.push(precedent);
+    },
+    clearPrecedents: (state) => {
+      while(state.precedents.length) {
+        state.precedents.pop();
+      }
     }
   },
   actions: {
