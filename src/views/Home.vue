@@ -3,7 +3,8 @@
     <img src="https://i.ytimg.com/vi/vB1HKjqyPuE/maxresdefault.jpg" alt="cj" width="800">
   </div>
 </template>
-<style scoped>
+
+<style>
   .home {
     text-align: center;
   }

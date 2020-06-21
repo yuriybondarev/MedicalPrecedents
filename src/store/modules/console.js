@@ -4,10 +4,10 @@ export default {
     commands: []
   },
   mutations: {
-    addCommand: (state, command) => {
+    addCommand(state, command) {
       state.commands.push(command);
     },
-    clearCommands: (state) => {
+    clearCommands(state) {
       while(state.commands.length) {
         state.commands.pop();
       }
@@ -17,8 +17,6 @@ export default {
     //TODO
   },
   getters: {
-    commands: (state) => {
-      return state.commands;
-    }
+    commands: (state) => state.commands
   }
 }

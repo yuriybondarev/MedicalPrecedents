@@ -7,7 +7,6 @@
 
 <script>
   export default {
-    name: "ConsoleCommand",
     props: {
       command: {
         type: Object,
@@ -17,7 +16,7 @@
   }
 </script>
 
-<style scoped>
+<style>
   .command-wrapper:not(:last-child) {
     margin-bottom: 14px;
   }

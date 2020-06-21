@@ -2,13 +2,7 @@
   <img id="logo" src="/assets/img/logo.png" alt="Логотип">
 </template>
 
-<script>
-  export default {
-    name: "Logo",
-  }
-</script>
-
-<style scoped>
+<style>
   #logo {
     width: 100px;
   }

@@ -1,5 +1,5 @@
 <template>
-  <form id="add-precedent-form">
+  <form-model id="add-precedent-form">
     <div>
       <div>
         <div>
@@ -112,11 +112,15 @@
       </div>
     </div>
     <button>Добавить прецедент</button>
-  </form>
+  </form-model>
 </template>
 
 <script>
+  import FormModel from '../models/Form';
+
   export default {
-    name: "AddPrecedentForm"
+    components: {
+      FormModel
+    }
   };
 </script>

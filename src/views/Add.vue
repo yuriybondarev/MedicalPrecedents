@@ -1,12 +1,11 @@
 <template>
-  <add-precedent-form class="form-model"/>
+  <add-precedent-form></add-precedent-form>
 </template>
 
 <script>
-  import AddPrecedentForm from '../components/AddPrecedentForm';
+  import AddPrecedentForm from '../components/forms/AddPrecedent';
 
   export default {
-    name: "Add",
     components: {
       AddPrecedentForm
     }

@@ -1,15 +1,14 @@
 <template>
-  <form id="console-command-form" @submit.prevent="submitConsole">
+  <form-model id="console-command-form" @submit="submitConsole">
     <input v-model="consoleCommand" name="console-command" placeholder="Введите запрос" />
-    <button>
-      <fa-icon icon="arrow-right"/>
-    </button>
-  </form>
+    <button><fa-icon icon="arrow-right"/></button>
+  </form-model>
 </template>
 
 <script>
+  import FormModel from '../models/Form';
+
   export default {
-    name: "ConsoleCommandForm",
     data() {
       return {
         consoleCommand: null,
@@ -19,16 +18,19 @@
       submitConsole() {
         let command = {
           value: this.consoleCommand,
-          result: "Команда успешно выполнена"
+          result: 'Команда успешно выполнена'
         };
 
         this.$store.commit('console/addCommand', command);
       }
+    },
+    components: {
+      FormModel
     }
-  }
+  };
 </script>
 
-<style scoped>
+<style>
   #console-command-form {
     display: flex;
     width: 100%;

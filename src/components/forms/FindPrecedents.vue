@@ -1,5 +1,5 @@
 <template>
-  <form id="find-precedents-form" @submit.prevent="submitFind">
+  <form-model id="find-precedents-form" @submit="submitFind">
     <div>
       <div>
         <div>
@@ -373,25 +373,26 @@
         </div>
       </div>
     </div>
-    <button type="button" @click="submitFind">Найти прецеденты</button>
-  </form>
+    <button>Найти прецеденты</button>
+  </form-model>
 </template>
 
 <script>
+  import FormModel from '../models/Form';
+
   export default {
-    name: "FindPrecedentsForm",
     methods: {
       submitFind() {
         let precedent = {
-          name: "Аркадий",
-          surname: "Паровозов",
-          gender: "м",
+          name: 'Аркадий',
+          surname: 'Паровозов',
+          gender: 'м',
           age: 12,
           height: 2.3,
           weight: 64,
           type: null,
           anamnesys: 1,
-          vesselsState: "Риск",
+          vesselsState: 'Риск',
           bmi: 2,
           wc: 1,
           si: 3,
@@ -406,8 +407,11 @@
           rt: 1
         };
 
-        this.$store.commit("precedents/addPrecedent", precedent);
+        this.$store.commit('precedents/addPrecedent', precedent);
       }
+    },
+    components: {
+      FormModel
     }
   };
 </script>

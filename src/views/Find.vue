@@ -1,16 +1,15 @@
 <template>
   <div>
-    <find-precedents-form class="form-model"/>
-    <finded-precedents-table class="table-model"/>
+    <find-precedents-form></find-precedents-form>
+    <finded-precedents-table></finded-precedents-table>
   </div>
 </template>
 
 <script>
-  import FindedPrecedentsTable from '../components/FindedPrecedensTable';
-  import FindPrecedentsForm from '../components/FindPrecentsForm';
+  import FindedPrecedentsTable from '../components/tables/FindedPrecedents';
+  import FindPrecedentsForm from '../components/forms/FindPrecedents';
 
   export default {
-    name: "Find",
     components: {
       FindedPrecedentsTable,
       FindPrecedentsForm
@@ -18,7 +17,7 @@
   };
 </script>
 
-<style scoped>
+<style>
   #finded-precedents-table {
     margin-top: 36px;
   }

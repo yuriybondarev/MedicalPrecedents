@@ -4,10 +4,10 @@ export default {
     precedents: []
   },
   mutations: {
-    addPrecedent: (state, precedent) => {
+    addPrecedent(state, precedent) {
       state.precedents.push(precedent);
     },
-    clearPrecedents: (state) => {
+    clearPrecedents(state) {
       while(state.precedents.length) {
         state.precedents.pop();
       }
@@ -17,8 +17,6 @@ export default {
     //TODO
   },
   getters: {
-    precedents: (state) => {
-      return state.precedents;
-    }
+    precedents: (state) => state.precedents
   }
 }

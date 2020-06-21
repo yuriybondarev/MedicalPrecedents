@@ -14,34 +14,18 @@
 </template>
 
 <script>
+  import items from '@/store/static/menu-items.js';
+
   export default {
-    name: "MenuList",
     data() {
       return {
-        items: [
-          {
-            route: {name: "Home"},
-            name: "Главная"
-          },
-          {
-            route: {name: "Add"},
-            name: "Добавить прецедент"
-          },
-          {
-            route: {name: "Find"},
-            name: "Поиск прецедентов"
-          },
-          {
-            route: {name: "Console"},
-            name: "Консоль запросов"
-          }
-        ]
+        items
       };
     }
   };
 </script>
 
-<style scoped>
+<style>
   #menu {
     display: flex;
     justify-content: center;
@@ -50,24 +34,24 @@
     margin: 0;
   }
 
-  a {
+  #menu a {
     text-decoration: none;
     color: #eee;
     text-transform: uppercase;
   }
 
-  li {
+  #menu li {
     display: block;
     padding: 14px 0 10.5px;
     border-bottom: 3.5px solid #2f3439;
     transition: 500ms linear border-bottom;
   }
 
-  li:not(:last-child) {
+  #menu li:not(:last-child) {
     margin-right: 24px;
   }
 
-  .link-active, li:hover {
+  #menu .link-active, #menu li:hover {
     transition: 500ms linear border-bottom;
     border-bottom: 3.5px solid #ee7147 !important;
   }

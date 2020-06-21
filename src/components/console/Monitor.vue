@@ -4,21 +4,22 @@
         tag="div"
         enter-active-class="animate__animated animate__bounceInLeft animate__fast"
       >
-        <console-command v-for="(command, index) in commands" :key="index" :command="command"/>
+        <console-command v-for="command in commands" 
+          :key="command" 
+          :command="command"></console-command>
       </transition-group>
     </div>
 </template>
 
 <script>
-  import {mapGetters} from 'vuex';
-  import ConsoleCommand from './ConsoleCommand';
+  import ConsoleCommand from './Command';
+  import { mapGetters } from 'vuex';
 
   export default {
-    name: "ConsoleMonitor",
     computed: mapGetters('console', ['commands']),
     methods: {
       clearMonitor() {
-        this.$store.commit("console/clearCommands");
+        this.$store.commit('console/clearCommands');
       }
     },
     components: {
@@ -27,13 +28,13 @@
   };
 </script>
 
-<style scoped>
+<style>
   #console-monitor {
     background-color: #2f3439;
     padding: 18px;
     border-radius: 4px;
     margin-bottom: 24px;
-    max-height: 50vh;
+    height: 50vh;
     overflow: auto;
   }
 
