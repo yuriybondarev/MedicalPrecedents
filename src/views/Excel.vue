@@ -1,13 +1,15 @@
 <template>
-  <send-excel-form></send-excel-form>
+  <div id="excel-view-wrapper">
+    <ExcelSendForm/>
+  </div>
 </template>
 
 <script>
-  import SendExcelForm from '../components/forms/SendExcel';
+  import ExcelSendForm from '../components/ExcelSendForm';
 
   export default {
     components: {
-      SendExcelForm
+      ExcelSendForm
     }
   };
 </script>

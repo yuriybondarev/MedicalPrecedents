@@ -1,24 +1,24 @@
 <template>
-  <div id="console-wrapper">
-    <console-monitor></console-monitor>
-    <send-console-command-form></send-console-command-form>
+  <div id="console-view-wrapper">
+    <ConsoleMonitor/>
+    <ConsoleCommandFormSend/>
   </div>
 </template>
 
 <script>
-  import ConsoleMonitor from '../components/console/Monitor';
-  import SendConsoleCommandForm from '../components/forms/SendConsoleCommand';
+  import ConsoleMonitor from '../components/ConsoleMonitor';
+  import ConsoleCommandFormSend from '../components/ConsoleCommandFormSend';
 
   export default {
     components: {
       ConsoleMonitor,
-      SendConsoleCommandForm
+      ConsoleCommandFormSend
     }
   }
 </script>
 
 <style>
-  #console-wrapper {
+  #console-view-wrapper {
     width: 70%;
     margin: 0 auto;
   }

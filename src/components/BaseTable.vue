@@ -1,8 +1,16 @@
 <template>
-  <table class="table-model">
+  <table 
+    class="table-model"
+    v-on="$listeners"
+  >
     <thead v-if="headers.length !== 0">
       <tr>
-        <td v-for="(header, index) in headers" :key="index">{{ header }}</td>
+        <td
+          v-for="(header, index) in headers"
+          :key="index"
+        >
+          {{ header }}
+        </td>
       </tr>
     </thead>
     <slot></slot>
@@ -14,9 +22,7 @@
     props: {
       headers: {
         type: Array,
-        default() {
-          return [];
-        }
+        default: () => []
       }
     }
   };

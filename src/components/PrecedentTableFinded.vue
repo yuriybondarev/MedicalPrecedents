@@ -1,10 +1,18 @@
 <template>
-  <table-model :headers="headers" @dblclick="clearTable">
+  <BaseTable 
+    id="finded-precedents-table"
+    :headers="headers" 
+    @dblclick="clear"
+  >
     <transition-group 
       tag="tbody"
-      enter-active-class="animate__animated animate__fadeIn animate__fast"
+      enter-active-class="animate__animated animate__fadeIn"
+      leave-active-class="animate__animated animate__fadeOut"
     >
-      <tr v-for="precedent in precedents" :key="precedent">
+      <tr 
+        v-for="(precedent, index) in precedents" 
+        :key="index"
+      >
         <td>{{ precedent.name }}</td>
         <td>{{ precedent.surname }}</td>
         <td>{{ precedent.gender }}</td>
@@ -28,28 +36,28 @@
         <td>{{ precedent.rt }}</td>
       </tr>
     </transition-group>
-  </table-model>
+  </BaseTable>
 </template>
 
 <script>
-  import TableModel from '../models/Table';
-  import headers from '@/store/static/finded-precedents-table-headers.js';
+  import BaseTable from './BaseTable';
+  import headers from '@/store/static/precedent-table-headers-finded.js';
   import { mapGetters } from 'vuex';
 
   export default {
-    computed: mapGetters('precedents', ['precedents']),
+    components: {
+      BaseTable
+    },
     data() {
       return {
         headers
       };
     },
+    computed: mapGetters(['precedents']),
     methods: {
-      clearTable() {
-        this.$store.commit('precedents/clearPrecedents');
+      clear() {
+        this.$store.commit('CLEAR_PRECEDENTS');
       }
     },
-    components: {
-      TableModel
-    }
   };
 </script>

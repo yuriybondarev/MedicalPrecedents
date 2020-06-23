@@ -1,13 +1,15 @@
 <template>
-  <add-precedent-form></add-precedent-form>
+  <div id="add-view-wrapper">
+    <PrecedentFormAdd/>
+  </div>
 </template>
 
 <script>
-  import AddPrecedentForm from '../components/forms/AddPrecedent';
+  import PrecedentFormAdd from '../components/PrecedentFormAdd';
 
   export default {
     components: {
-      AddPrecedentForm
+      PrecedentFormAdd
     }
   };
 </script>

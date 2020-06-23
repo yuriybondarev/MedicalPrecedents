@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <header>
-      <logo></logo>
+      <MedicineLogo/>
     </header>
     <nav>
-      <menu-list></menu-list>
+      <MenuList/>
     </nav>
     <main>
       <transition
@@ -12,7 +12,7 @@
         enter-active-class="animate__animated animate__fadeIn animate__faster"
         leave-active-class="animate__animated animate__fadeOut animate__faster"
       >
-        <router-view></router-view>
+        <router-view/>
       </transition>
     </main>
     <footer>
@@ -22,12 +22,12 @@
 </template>
 
 <script>
-  import Logo from './components/Logo';
-  import MenuList from './components/MenuList';
+  import MedicineLogo from './components/TheMedicineLogo';
+  import MenuList from './components/TheMenuList';
 
   export default {
     components: {
-      Logo,
+      MedicineLogo,
       MenuList
     }
   }; 

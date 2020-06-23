@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import Home from '@/views/Home.vue';
 
 Vue.use(VueRouter);
 
@@ -7,31 +8,31 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    meta: {title: 'Главная'},
-    component: () => import('../views/Home.vue')
+    meta: { title: 'Главная' },
+    component: Home
   },
   {
     path: '/add',
     name: 'Add',
-    meta: {title: 'Добавить прецедент'},
+    meta: { title: 'Добавить прецедент' },
     component: () => import('../views/Add.vue')
   },
   {
     path: '/find',
     name: 'Find',
-    meta: {title: 'Найти прецеденты'},
+    meta: { title: 'Найти прецеденты' },
     component: () => import('../views/Find.vue')
   },
   {
     path: '/console',
     name: 'Console',
-    meta: {title: 'Консоль запросов'},
+    meta: { title: 'Консоль запросов' },
     component: () => import('../views/Console.vue')
   },
   {
     path: '/excel',
     name: 'Excel',
-    meta: {title: 'Отправить Excel-файл'},
+    meta: { title: 'Отправить Excel-файл' },
     component: () => import('../views/Excel.vue')
   }
 ];

@@ -1,18 +1,25 @@
 <template>
-  <div>
-    <find-precedents-form></find-precedents-form>
-    <finded-precedents-table></finded-precedents-table>
+  <div id="find-view-wrapper">
+    <PrecedentFormFind/>
+    <transition enter-active-class="animate__animated animate__fadeIn">
+      <PrecedentTableFinded v-show="isFinded"/>
+    </transition>
   </div>
 </template>
 
 <script>
-  import FindedPrecedentsTable from '../components/tables/FindedPrecedents';
-  import FindPrecedentsForm from '../components/forms/FindPrecedents';
+  import PrecedentTableFinded from '../components/PrecedentTableFinded';
+  import PrecedentFormFind from '../components/PrecedentFormFind';
 
   export default {
     components: {
-      FindedPrecedentsTable,
-      FindPrecedentsForm
+      PrecedentTableFinded,
+      PrecedentFormFind
+    },
+    computed: {
+      isFinded() {
+        return (this.$store.getters.precedents.length !== 0) ? true : false;
+      }
     }
   };
 </script>

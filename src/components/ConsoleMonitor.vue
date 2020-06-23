@@ -1,29 +1,34 @@
 <template>
-    <div id="console-monitor" @dblclick="clearMonitor">
-      <transition-group 
-        tag="div"
-        enter-active-class="animate__animated animate__bounceInLeft animate__fast"
-      >
-        <console-command v-for="command in commands" 
-          :key="command" 
-          :command="command"></console-command>
-      </transition-group>
-    </div>
+  <div 
+    id="console-monitor" 
+    @dblclick="clear"
+  >
+    <transition-group
+      tag="div"
+      enter-active-class="animate__animated animate__bounceInLeft animate__fast"
+    >
+      <ConsoleCommand
+        v-for="(command, index) in commands" 
+        :key="index" 
+        :command="command"
+      />
+    </transition-group>
+  </div>
 </template>
 
 <script>
-  import ConsoleCommand from './Command';
+  import ConsoleCommand from './ConsoleCommand';
   import { mapGetters } from 'vuex';
 
   export default {
-    computed: mapGetters('console', ['commands']),
-    methods: {
-      clearMonitor() {
-        this.$store.commit('console/clearCommands');
-      }
-    },
     components: {
       ConsoleCommand
+    },
+    computed: mapGetters(['commands']),
+    methods: {
+      clear() {
+        this.$store.commit('CLEAR_COMMANDS');
+      }
     }
   };
 </script>

@@ -1,5 +1,8 @@
 <template>
-  <form-model id="find-precedents-form" @submit="submitFind">
+  <BaseForm 
+    id="find-precedent-form"
+    @submit.prevent="submit"
+  >
     <div>
       <div>
         <div>
@@ -10,7 +13,12 @@
             value="м"
             type="checkbox"
           />
-          <label for="male-gender-input" class="not-block-label">Мужчина</label>
+          <label 
+            for="male-gender-input" 
+            class="not-block-label"
+          >
+            Мужчина
+          </label>
         </div>
         <div>
           <input
@@ -20,16 +28,27 @@
             value="ж"
             type="checkbox"
           />
-          <label for="female-gender-input" class="not-block-label">Женщина</label>
+          <label 
+            for="female-gender-input" 
+            class="not-block-label"
+          >
+            Женщина
+          </label>
         </div>
       </div>
       <div>
         <label for="name-input">Имя:</label>
-        <input id="name-input" name="name" />
+        <input 
+          id="name-input" 
+          name="name" 
+        />
       </div>
       <div>
         <label for="surname-input">Фамилия:</label>
-        <input id="surname-input" name="surname" />
+        <input 
+          id="surname-input" 
+          name="surname" 
+        />
       </div>
       <div>
         <label>Возраст:</label>
@@ -106,15 +125,26 @@
       </div>
       <div>
         <label for="type-input">Тип:</label>
-        <input id="type-input" name="type" />
+        <input 
+          id="type-input" 
+          name="type" 
+        />
       </div>
       <div>
-        <select name="anamnesys" id="anamnesys-select" multiple>
+        <select 
+          name="anamnesys" 
+          id="anamnesys-select" 
+          multiple
+        >
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
         </select>
-        <select name="vessels-state" id="vessels-state-select" multiple>
+        <select 
+          name="vessels-state" 
+          id="vessels-state-select" 
+          multiple
+        >
           <option value="1">Риск</option>
           <option value="2">Требуется наблюдение</option>
           <option value="3">Высокий риск</option>
@@ -374,15 +404,18 @@
       </div>
     </div>
     <button>Найти прецеденты</button>
-  </form-model>
+  </BaseForm>
 </template>
 
 <script>
-  import FormModel from '../models/Form';
+  import BaseForm from './BaseForm';
 
   export default {
+    components: {
+      BaseForm
+    },
     methods: {
-      submitFind() {
+      submit() {
         let precedent = {
           name: 'Аркадий',
           surname: 'Паровозов',
@@ -407,11 +440,8 @@
           rt: 1
         };
 
-        this.$store.commit('precedents/addPrecedent', precedent);
+        this.$store.commit('ADD_PRECEDENT', precedent);
       }
-    },
-    components: {
-      FormModel
     }
   };
 </script>

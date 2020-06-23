@@ -1,5 +1,8 @@
 <template>
-  <form class="form-model" @submit.prevent="$emit('submit')">
+  <form 
+    class="form-model"
+    v-on="$listeners"
+  >
     <slot></slot>
   </form>
 </template>

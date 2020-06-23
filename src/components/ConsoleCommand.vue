@@ -1,6 +1,9 @@
 <template>
   <div class="command-wrapper">
-    <p><fa-icon icon="terminal"/>{{ command.value }}</p>
+    <p>
+      <fa-icon icon="terminal"/>
+      {{ command.value }}
+    </p>
     <p>{{ command.result }}</p>
   </div>
 </template>

@@ -1,13 +1,12 @@
 export default {
-  namespaced: true,
   state: {
     precedents: []
   },
   mutations: {
-    addPrecedent(state, precedent) {
+    ADD_PRECEDENT(state, precedent) {
       state.precedents.push(precedent);
     },
-    clearPrecedents(state) {
+    CLEAR_PRECEDENTS(state) {
       while(state.precedents.length) {
         state.precedents.pop();
       }

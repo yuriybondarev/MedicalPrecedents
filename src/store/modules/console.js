@@ -1,13 +1,12 @@
 export default {
-  namespaced: true,
   state: {
     commands: []
   },
   mutations: {
-    addCommand(state, command) {
+    ADD_COMMAND(state, command) {
       state.commands.push(command);
     },
-    clearCommands(state) {
+    CLEAR_COMMANDS(state) {
       while(state.commands.length) {
         state.commands.pop();
       }
