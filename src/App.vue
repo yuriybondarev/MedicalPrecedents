@@ -42,6 +42,11 @@
     outline: none;
   }
 
+  .basic-wrapper {
+    width: 70%;
+    margin: 0 auto;
+  }
+
   body {
     background-color: #2b2b2b;
     color: #eee;

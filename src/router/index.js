@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import $store from '@/store';
 import VueRouter from 'vue-router';
 import Home from '@/views/Home.vue';
 
@@ -45,6 +46,11 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   document.title = to.meta.title;
+
+  if (from.name == 'Excel') {
+    $store.commit('CLEAR_EXCEL');
+  }
+  
   next();
 })
 

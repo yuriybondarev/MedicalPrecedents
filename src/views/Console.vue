@@ -1,6 +1,8 @@
 <template>
   <div id="console-view-wrapper">
-    <ConsoleMonitor/>
+    <transition enter-active-class="animate__animated animate__fadeIn animate__faster">
+      <ConsoleMonitor v-show="isSended"/>
+    </transition>
     <ConsoleCommandFormSend/>
   </div>
 </template>
@@ -13,13 +15,17 @@
     components: {
       ConsoleMonitor,
       ConsoleCommandFormSend
-    }
+    },
+    computed: {
+      isSended() {
+        return (this.$store.getters.commands.length !== 0) ? true : false;
+      }
+    },
   }
 </script>
 
 <style>
-  #console-view-wrapper {
-    width: 70%;
-    margin: 0 auto;
+  #console-monitor {
+    margin-bottom: 22px;
   }
 </style>

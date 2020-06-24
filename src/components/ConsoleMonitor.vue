@@ -1,11 +1,12 @@
 <template>
   <div 
-    id="console-monitor" 
+    id="console-monitor"
+    class="basic-wrapper"
     @dblclick="clear"
   >
     <transition-group
       tag="div"
-      enter-active-class="animate__animated animate__bounceInLeft animate__fast"
+      enter-active-class="animate__animated animate__flipInX animate__fast"
     >
       <ConsoleCommand
         v-for="(command, index) in commands" 
@@ -38,9 +39,10 @@
     background-color: #2f3439;
     padding: 18px;
     border-radius: 4px;
-    margin-bottom: 24px;
-    height: 50vh;
-    overflow: auto;
+    max-height: 50vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
   }
 
   /* Полоса прокрутки */

@@ -1,5 +1,5 @@
 <template>
-  <BaseForm 
+  <BaseFormFlex
     id="console-command-send-form" 
     @submit.prevent="submit"
   >
@@ -11,15 +11,15 @@
     <button>
       <fa-icon icon="arrow-right"/>
     </button>
-  </BaseForm>
+  </BaseFormFlex>
 </template>
 
 <script>
-  import BaseForm from './BaseForm';
+  import BaseFormFlex from './BaseFormFlex';
 
   export default {
     components: {
-      BaseForm
+      BaseFormFlex
     },
     data() {
       return {
@@ -38,19 +38,3 @@
     }
   };
 </script>
-
-<style>
-  #console-command-send-form {
-    display: flex;
-    width: 100%;
-  }
-  #console-command-send-form input {
-    width: auto;
-    flex-grow: 1;
-  }
-  #console-command-send-form button {
-    width: 10%;
-    margin: 0;
-    margin-left: 12px;
-  }
-</style>

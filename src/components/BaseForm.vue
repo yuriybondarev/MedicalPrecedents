@@ -1,6 +1,6 @@
 <template>
   <form 
-    class="form-model"
+    class="form-model basic-wrapper"
     v-on="$listeners"
   >
     <slot></slot>
@@ -8,11 +8,6 @@
 </template>
 
 <style>
-  .form-model {
-    width: 70%;
-    margin: 0 auto;
-  }
-
   .form-model input, .form-model select, .form-model button {
     font-size: 1em;
   }

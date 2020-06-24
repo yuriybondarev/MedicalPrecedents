@@ -26,6 +26,6 @@
 
 <style>
   #finded-precedents-table {
-    margin-top: 36px;
+    margin-top: 22px;
   }
 </style>

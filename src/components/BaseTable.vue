@@ -13,7 +13,19 @@
         </td>
       </tr>
     </thead>
-    <slot></slot>
+    <tbody>
+      <tr 
+        v-for="(row, index) in body" 
+        :key="index"
+      >
+        <td
+          v-for="(td, tdIndex) in row" 
+          :key="tdIndex"
+        >
+          {{ td }}
+        </td>
+      </tr>
+    </tbody>
   </table>
 </template>
 
@@ -21,6 +33,10 @@
   export default {
     props: {
       headers: {
+        type: Array,
+        default: () => []
+      },
+      body: {
         type: Array,
         default: () => []
       }

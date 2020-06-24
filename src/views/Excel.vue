@@ -1,15 +1,34 @@
 <template>
   <div id="excel-view-wrapper">
-    <ExcelSendForm/>
+    <ExcelFormSend/>
+    <transition enter-active-class="animate__animated animate__fadeIn">
+      <ExcelTableParsing v-show="isParsed"/>
+    </transition>
   </div>
 </template>
 
 <script>
-  import ExcelSendForm from '../components/ExcelSendForm';
+  import ExcelFormSend from '../components/ExcelFormSend';
+  import ExcelTableParsing from '../components/ExcelTableParsing';
 
   export default {
     components: {
-      ExcelSendForm
+      ExcelFormSend,
+      ExcelTableParsing
+    },
+    computed: {
+      isParsed() {
+        let headersLength = this.$store.getters.headers.length;
+        let valuesLength = this.$store.getters.values.length;
+
+        return ((headersLength !== 0) && (valuesLength !== 0)) ? true : false;
+      }
     }
   };
 </script>
+
+<style>
+  #excel-parsing-table {
+    margin-top: 22px;
+  }
+</style>
