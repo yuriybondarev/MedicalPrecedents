@@ -7,6 +7,61 @@
   </form>
 </template>
 
+<script>
+  import AJAX from '@/classes/ajax';
+  import Banner from '@/classes/banner';
+
+  export default {
+    data() {
+      return {
+        isBlocked: false
+      }
+    },
+    methods: {
+      submitPost(form, url, successCallback = () => {}) {
+        this.isBlocked = true;
+
+        let bannerType;
+        let bannerMessage;
+
+        AJAX.post(new FormData(form), url, successCallback)
+            .then((message) => {
+              bannerType = Banner.BANNER_SUCCESS;
+              bannerMessage = message;
+            })
+            .catch((error) => {
+              bannerType = Banner.BANNER_ERROR;
+              bannerMessage = error;
+            })
+            .finally(async () => {
+              await Banner.show(bannerMessage, bannerType);
+              this.isBlocked = false;
+            });
+      },
+      submitGet(params, url, successCallback = () => {}) {
+        this.isBlocked = true;
+
+        let bannerType;
+        let bannerMessage;
+        
+        AJAX.get(params, url, successCallback)
+            .then((message) => {
+              bannerType = Banner.BANNER_SUCCESS;
+              bannerMessage = message;
+            })
+            .catch((error) => {
+              bannerType = Banner.BANNER_ERROR;
+              bannerMessage = error;
+            })
+            .finally(async () => {
+              await Banner.show(bannerMessage, bannerType);
+              this.isBlocked = false;
+            });
+      }
+    }
+  };
+</script>
+
 <style>
   .form-model input, .form-model select, .form-model button {
     font-size: 1em;

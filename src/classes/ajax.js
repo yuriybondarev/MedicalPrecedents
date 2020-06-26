@@ -1,7 +1,7 @@
-import Banner from './banner';
-
 export default {
   async post(formData, url, successCallback = () => {}) {
+    let promise;
+
     try {
       let response = await fetch(url, {
         method: 'POST',
@@ -10,25 +10,31 @@ export default {
 
       let jsonResponse = await response.json();
 
-      Banner.showBanner(jsonResponse.message, Banner.BANNER_SUCCESS);
-
       successCallback(jsonResponse);
+
+      promise = Promise.resolve(jsonResponse.message);
     } catch (error) {
-      Banner.showBanner(error, Banner.BANNER_ERROR);
+      promise = Promise.reject(error);
     }
+
+    return promise;
   },
   async get(params, url, successCallback = () => {}) {
+    let promise;
+
     try {
       let response = await fetch(url + params);
       
       let jsonResponse = await response.json();
 
-      Banner.showBanner(jsonResponse.message, Banner.BANNER_SUCCESS);
-
       successCallback(jsonResponse);
+
+      promise = Promise.resolve(jsonResponse.message);
     } catch (error) {
-      Banner.showBanner(error, Banner.BANNER_ERROR);
+      promise = Promise.reject(error);
     }
+
+    return promise;
   },
   getQueryString(formData) {
     let pairs = [];

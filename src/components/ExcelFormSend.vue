@@ -19,17 +19,17 @@
 <script>
   import BaseFormFlex from './BaseFormFlex';
   import XLSX from 'xlsx';
-  import AJAX from '@/classes/ajax';
 
   export default {
     components: {
       BaseFormFlex
     },
+    extends: BaseFormFlex,
     methods: {
       submit(event) {
-        if (!this.$store.getters.isBannerActive) {
+        if (!this.isBlocked) {
           const URL = 'post.php';
-          AJAX.post(new FormData(event.target), URL);
+          this.submitPost(event.target, URL);
         }
       },
       fileChanged() {

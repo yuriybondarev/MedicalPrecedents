@@ -15,26 +15,26 @@
 
 <script>
   import BaseFormFlex from './BaseFormFlex';
-  import AJAX from '@/classes/ajax';
 
   export default {
     components: {
       BaseFormFlex
     },
+    extends: BaseFormFlex,
     methods: {
       submit(event) {
-        if (!this.$store.getters.isBannerActive) {
+        if (!this.isBlocked) {
           const URL = 'post.php';
 
-          AJAX.post(new FormData(event.target), URL, (jsonResponse) => {
-            let commandObject = {
+          let successCallback = (jsonResponse) => {
+            this.$store.commit('ADD_COMMAND', {
               value: 'SELECT * FROM precedents',
               result: 'Команда успешно выполнена',
               jsonResponse
-            };
+            });
+          };
 
-            this.$store.commit('ADD_COMMAND', commandObject);
-          });
+          this.submitPost(event.target, URL, successCallback);
         }
       }
     }

@@ -415,15 +415,18 @@
     components: {
       BaseForm
     },
+    extends: BaseForm,
     methods: {
       submit(event) {
-        if (!this.$store.getters.isBannerActive) {
+        if (!this.isBlocked) {
           const URL = 'get.php';
           const params = AJAX.getQueryString(new FormData(event.target));
+          
+          let successCallback = (jsonResponse) => {
+            this.$store.commit('ADD_PRECEDENTS', jsonResponse.data)
+          };
 
-          AJAX.get(params, URL, (jsonResponse) => {
-            this.$store.commit('ADD_PRECEDENTS', jsonResponse.data);
-          });
+          this.submitGet(params, URL, successCallback);
         }
       }
     }

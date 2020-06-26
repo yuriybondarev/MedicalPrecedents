@@ -1,7 +1,7 @@
 export default {
   state: {
     bannerType: null,
-    bannerMessage: null
+    bannerMessage: null,
   },
   mutations: {
     SWITCH_BANNER(state, bannerType) {
@@ -13,7 +13,6 @@ export default {
   },
   getters: {
     bannerType: (state) => state.bannerType,
-    bannerMessage: (state) => state.bannerMessage,
-    isBannerActive: (state) => (state.bannerType === null) ? false : true
+    bannerMessage: (state) => state.bannerMessage
   }
 };

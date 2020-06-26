@@ -13,7 +13,8 @@
   export default {
     components: {
       BaseForm
-    }
+    },
+    extends: BaseForm,
   };
 </script>
 
