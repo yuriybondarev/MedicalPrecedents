@@ -3,8 +3,7 @@
     id="console-command-send-form" 
     @submit.prevent="submit"
   >
-    <input 
-      v-model="command" 
+    <input
       name="console-command" 
       placeholder="Введите запрос" 
     />
@@ -16,24 +15,27 @@
 
 <script>
   import BaseFormFlex from './BaseFormFlex';
+  import AJAX from '@/classes/ajax';
 
   export default {
     components: {
       BaseFormFlex
     },
-    data() {
-      return {
-        command: null,
-      };
-    },
     methods: {
-      submit() {
-        let commandObject = {
-          value: this.command,
-          result: 'Команда успешно выполнена'
-        };
+      submit(event) {
+        if (!this.$store.getters.isBannerActive) {
+          const URL = 'post.php';
 
-        this.$store.commit('ADD_COMMAND', commandObject);
+          AJAX.post(new FormData(event.target), URL, (jsonResponse) => {
+            let commandObject = {
+              value: 'SELECT * FROM precedents',
+              result: 'Команда успешно выполнена',
+              jsonResponse
+            };
+
+            this.$store.commit('ADD_COMMAND', commandObject);
+          });
+        }
       }
     }
   };

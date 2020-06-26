@@ -19,29 +19,41 @@
 <script>
   import BaseFormFlex from './BaseFormFlex';
   import XLSX from 'xlsx';
+  import AJAX from '@/classes/ajax';
 
   export default {
     components: {
       BaseFormFlex
     },
     methods: {
-      submit() {
-        alert('Файл отправлен');
+      submit(event) {
+        if (!this.$store.getters.isBannerActive) {
+          const URL = 'post.php';
+          AJAX.post(new FormData(event.target), URL);
+        }
       },
       fileChanged() {
-        let excelFile = this.$refs.fileInput.files[0];
-        let reader = new FileReader();
+        const ALLOWED_FORMATS = ['xlsx', 'xls', 'ods'];
 
-        reader.onload = (event) => {
-          let workbook = XLSX.read(event.target.result, {type: 'array'});
-          let worksheet = workbook.Sheets[workbook.SheetNames[0]];
-          let parsedData = XLSX.utils.sheet_to_json(worksheet, {header: 1});
+        let file = this.$refs.fileInput.files[0];
+        let fileFormat = file.name.split('.').pop();
 
-          this.$store.commit('UPDATE_HEADERS', parsedData.shift());
-          this.$store.commit('UPDATE_VALUES', parsedData);
-        };
+        if (ALLOWED_FORMATS.includes(fileFormat)) {
+          let reader = new FileReader();
 
-        reader.readAsArrayBuffer(excelFile);
+          reader.onload = (event) => {
+            let workbook = XLSX.read(event.target.result, {type: 'array'});
+            let worksheet = workbook.Sheets[workbook.SheetNames[0]];
+            let parsedData = XLSX.utils.sheet_to_json(worksheet, {header: 1});
+
+            this.$store.commit('UPDATE_HEADERS', parsedData.shift());
+            this.$store.commit('UPDATE_VALUES', parsedData);
+          };
+
+          reader.readAsArrayBuffer(file);
+        } else {
+          this.$store.commit('CLEAR_EXCEL');
+        }
       }
     }
   };

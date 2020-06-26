@@ -26,8 +26,8 @@
     flex-grow: 1;
   }
   .flex-form-model button {
-    width: 10%;
-    margin: 0;
+    width: 10% !important;
+    margin-top: 0 !important;
     margin-left: 12px;
   }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <BaseForm 
     id="add-precedent-form"
-    @submit.prevent
+    @submit.prevent="submit"
   >
     <div>
       <div>
@@ -40,21 +40,21 @@
       <div>
         <label for="name-input">Имя:</label>
         <input 
-          id="name-input" 
+          id="name-input"
           name="name" 
         />
       </div>
       <div>
         <label for="surname-input">Фамилия:</label>
         <input 
-          id="surname-input" 
+          id="surname-input"
           name="surname" 
         />
       </div>
       <div>
         <label for="age-input">Возраст:</label>
         <input 
-          id="age-input" 
+          id="age-input"
           min="0" 
           max="150" 
           required 
@@ -65,7 +65,7 @@
       <div>
         <label for="height-input">Рост:</label>
         <input 
-          id="height-input" 
+          id="height-input"
           min="0" 
           max="3" 
           step="any" 
@@ -77,7 +77,7 @@
       <div>
         <label for="weight-input">Вес:</label>
         <input 
-          id="weight-input" 
+          id="weight-input"
           min="0" 
           max="700" 
           step="any" 
@@ -89,14 +89,14 @@
       <div>
         <label for="type-input">Тип:</label>
         <input 
-          id="type-input" 
+          id="type-input"
           name="type" 
         />
       </div>
       <div>
         <select 
-          name="anamnesys" 
           id="anamnesys-select"
+          name="anamnesys" 
         >
           <option 
             value="0" 
@@ -110,8 +110,8 @@
           <option value="3">3</option>
         </select>
         <select 
-          name="vessels-state" 
           id="vessels-state-select"
+          name="vessels-state" 
         >
           <option 
             value="0" 
@@ -128,7 +128,7 @@
       <div>
         <label for="bmi-input">Индекс массы тела (ИМТ):</label>
         <input 
-          id="bmi-input" 
+          id="bmi-input"
           min="0" 
           step="any" 
           name="bmi" 
@@ -138,7 +138,7 @@
       <div>
         <label for="wc-input">Окружность талии (ОТ):</label>
         <input 
-          id="wc-input" 
+          id="wc-input"
           min="0" 
           step="any" 
           name="wc" 
@@ -148,7 +148,7 @@
       <div>
         <label for="si-input">Индекс курения (ИК):</label>
         <input 
-          id="si-input" 
+          id="si-input"
           min="0" 
           step="any" 
           name="si" 
@@ -158,7 +158,7 @@
       <div>
         <label for="sbp-input">Систолическое артериальное давление (САД):</label>
         <input 
-          id="sbp-input" 
+          id="sbp-input"
           min="0" 
           step="any" 
           name="sbp" 
@@ -168,7 +168,7 @@
       <div>
         <label for="dbp-input">Диастолическое артериальное давление (ДАД):</label>
         <input 
-          id="dbp-input" 
+          id="dbp-input"
           min="0" 
           step="any" 
           name="dbp" 
@@ -252,10 +252,19 @@
 
 <script>
   import BaseForm from './BaseForm';
+  import AJAX from '@/classes/ajax';
 
   export default {
     components: {
       BaseForm
+    },
+    methods: {
+      submit(event) {
+        if (!this.$store.getters.isBannerActive) {
+          const URL = 'post.php';
+          AJAX.post(new FormData(event.target), URL);
+        }
+      }
     }
   };
 </script>

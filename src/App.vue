@@ -18,18 +18,45 @@
     <footer>
       <p>© 2020 Евгений Миколенко (Fertnam)</p>
     </footer>
+    <transition
+      mode="out-in"
+      enter-active-class="animate__animated animate__slideInDown animate__faster"
+      leave-active-class="animate__animated animate__slideOutUp animate__faster"
+    >
+      <BannerError
+        v-if="bannerType === BANNER_ERROR"
+        :message="bannerMessage"
+      />
+      <BannerSuccess
+        v-else-if="bannerType === BANNER_SUCCESS"
+        :message="bannerMessage"
+      />
+    </transition>
   </div>
 </template>
 
 <script>
   import MedicineLogo from './components/TheMedicineLogo';
   import MenuList from './components/TheMenuList';
+  import BannerSuccess from './components/BannerSuccess';
+  import BannerError from './components/BannerError';
+  import { mapGetters } from 'vuex';
+  import Banner from './classes/banner';
 
   export default {
     components: {
       MedicineLogo,
-      MenuList
-    }
+      MenuList,
+      BannerSuccess,
+      BannerError
+    },
+    data() {
+      return {
+        BANNER_ERROR: Banner.BANNER_ERROR,
+        BANNER_SUCCESS: Banner.BANNER_SUCCESS
+      }
+    },
+    computed: mapGetters(['bannerType', 'bannerMessage'])
   }; 
 </script>
 

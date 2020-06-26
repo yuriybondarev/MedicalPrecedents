@@ -14,7 +14,7 @@
 </template>
 
 <script>
-  import items from '@/store/static/menu-items.js';
+  import items from '@/store/static/menu-items';
 
   export default {
     data() {

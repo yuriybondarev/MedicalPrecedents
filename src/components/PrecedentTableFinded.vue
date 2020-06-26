@@ -9,7 +9,7 @@
 
 <script>
   import BaseTable from './BaseTable';
-  import headers from '@/store/static/precedent-table-headers-finded.js';
+  import headers from '@/store/static/precedent-table-headers-finded';
   import { mapGetters } from 'vuex';
 
   export default {

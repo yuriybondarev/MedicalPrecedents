@@ -132,7 +132,7 @@
       </div>
       <div>
         <select 
-          name="anamnesys" 
+          name="anamnesys[]" 
           id="anamnesys-select" 
           multiple
         >
@@ -141,7 +141,7 @@
           <option value="3">3</option>
         </select>
         <select 
-          name="vessels-state" 
+          name="vessels-state[]" 
           id="vessels-state-select" 
           multiple
         >
@@ -409,38 +409,22 @@
 
 <script>
   import BaseForm from './BaseForm';
+  import AJAX from '@/classes/ajax';
 
   export default {
     components: {
       BaseForm
     },
     methods: {
-      submit() {
-        let precedent = {
-          name: 'Аркадий',
-          surname: 'Паровозов',
-          gender: 'м',
-          age: 12,
-          height: 2.3,
-          weight: 64,
-          type: null,
-          anamnesys: 1,
-          vesselsState: 'Риск',
-          bmi: 2,
-          wc: 1,
-          si: 3,
-          sbp: 4,
-          dbp: 2,
-          mbp: 6,
-          pbp: 3,
-          hr: 3,
-          aai: 8,
-          ed: 2,
-          fdi: 4,
-          rt: 1
-        };
+      submit(event) {
+        if (!this.$store.getters.isBannerActive) {
+          const URL = 'get.php';
+          const params = AJAX.getQueryString(new FormData(event.target));
 
-        this.$store.commit('ADD_PRECEDENT', precedent);
+          AJAX.get(params, URL, (jsonResponse) => {
+            this.$store.commit('ADD_PRECEDENTS', jsonResponse.data);
+          });
+        }
       }
     }
   };

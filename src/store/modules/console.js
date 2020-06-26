@@ -12,9 +12,6 @@ export default {
       }
     }
   },
-  actions: {
-    //TODO
-  },
   getters: {
     commands: (state) => state.commands
   }
