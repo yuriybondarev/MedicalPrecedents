@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <header>
-      <MedicineLogo/>
+      <router-link :to="{name: 'Home'}">
+        <MedicineLogo/>
+      </router-link>
     </header>
     <nav>
       <MenuList/>

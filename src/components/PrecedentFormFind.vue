@@ -419,11 +419,12 @@
     methods: {
       submit(event) {
         if (!this.isBlocked) {
-          const URL = 'get.php';
-          const params = AJAX.getQueryString(new FormData(event.target));
+          const URL = 'api/find.php';
+          const params = AJAX.getParamsString(new FormData(event.target));
           
-          let successCallback = (jsonResponse) => {
-            this.$store.commit('ADD_PRECEDENTS', jsonResponse.data)
+          let successCallback = (json) => {
+            this.$store.commit('CLEAR_PRECEDENTS');
+            this.$store.commit('ADD_PRECEDENTS', json.data)
           };
 
           this.submitGet(params, URL, successCallback);

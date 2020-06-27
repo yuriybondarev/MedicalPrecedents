@@ -94,6 +94,12 @@
     background-color: #2b9884;
     padding: 10px;
     margin-top: 24px;
+    transition: 500ms background-color;
+  }
+
+  .form-model button:hover {
+    background-color: #24806f;
+    transition: 500ms background-color;
   }
 
   .form-model .min-max-wrapper {

@@ -9,31 +9,31 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    meta: { title: 'Главная' },
+    meta: { title: 'Медицинская система' },
     component: Home
   },
   {
     path: '/add',
     name: 'Add',
-    meta: { title: 'Добавить прецедент' },
+    meta: { title: 'Медицинская система - Добавить' },
     component: () => import('../views/Add')
   },
   {
     path: '/find',
     name: 'Find',
-    meta: { title: 'Найти прецеденты' },
+    meta: { title: 'Медицинская система - Поиск' },
     component: () => import('../views/Find')
   },
   {
     path: '/console',
     name: 'Console',
-    meta: { title: 'Консоль запросов' },
+    meta: { title: 'Медицинская система - Консоль запросов' },
     component: () => import('../views/Console')
   },
   {
     path: '/excel',
     name: 'Excel',
-    meta: { title: 'Отправить Excel-файл' },
+    meta: { title: 'Медицинская система - Excel' },
     component: () => import('../views/Excel')
   }
 ];

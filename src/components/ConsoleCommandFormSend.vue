@@ -24,13 +24,12 @@
     methods: {
       submit(event) {
         if (!this.isBlocked) {
-          const URL = 'post.php';
+          const URL = 'api/console.php';
 
-          let successCallback = (jsonResponse) => {
+          let successCallback = (json) => {
             this.$store.commit('ADD_COMMAND', {
-              value: 'SELECT * FROM precedents',
-              result: 'Команда успешно выполнена',
-              jsonResponse
+              value: json.data.value,
+              result: json.data.result
             });
           };
 

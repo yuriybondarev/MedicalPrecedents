@@ -1,6 +1,6 @@
 export default {
   async post(formData, url, successCallback = () => {}) {
-    let promise;
+    let json;
 
     try {
       let response = await fetch(url, {
@@ -8,41 +8,37 @@ export default {
         body: formData
       });
 
-      let jsonResponse = await response.json();
+      json = await response.json();
 
-      successCallback(jsonResponse);
-
-      promise = Promise.resolve(jsonResponse.message);
+      successCallback(json);
     } catch (error) {
-      promise = Promise.reject(error);
+      throw new Error(error);
     }
 
-    return promise;
+    return Promise.resolve(json.message);
   },
   async get(params, url, successCallback = () => {}) {
-    let promise;
+    let json;
 
     try {
-      let response = await fetch(url + params);
+      let response = await fetch(url + '?' + params);
       
-      let jsonResponse = await response.json();
+      json = await response.json();
 
-      successCallback(jsonResponse);
-
-      promise = Promise.resolve(jsonResponse.message);
+      successCallback(json);
     } catch (error) {
-      promise = Promise.reject(error);
+      throw new Error(error);
     }
 
-    return promise;
+    return Promise.resolve(json.message);
   },
-  getQueryString(formData) {
+  getParamsString(formData) {
     let pairs = [];
 
     for (let [key, value] of formData.entries()) {
       pairs.push(encodeURIComponent(key) + '=' + encodeURIComponent(value));
     }
 
-    return '?' + pairs.join('&');
+    return pairs.join('&');
   }
 };
