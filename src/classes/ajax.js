@@ -1,33 +1,32 @@
 export default {
+  ERROR_MESSAGE: 'Запрос был отклонён. Код ошибки: ',
   async post(formData, url, successCallback = () => {}) {
+    let response = await fetch(url, {
+      method: 'POST',
+      body: formData
+    });
+    
     let json;
-
-    try {
-      let response = await fetch(url, {
-        method: 'POST',
-        body: formData
-      });
-
+    
+    if (response.ok) {
       json = await response.json();
-
       successCallback(json);
-    } catch (error) {
-      throw new Error(error);
+    } else {
+      throw new Error(this.ERROR_MESSAGE + response.status);
     }
 
     return Promise.resolve(json.message);
   },
   async get(params, url, successCallback = () => {}) {
+    let response = await fetch(url + '?' + params);
+    
     let json;
-
-    try {
-      let response = await fetch(url + '?' + params);
-      
+    
+    if (response.ok) {
       json = await response.json();
-
       successCallback(json);
-    } catch (error) {
-      throw new Error(error);
+    } else {
+      throw new Error(this.ERROR_MESSAGE + response.status);
     }
 
     return Promise.resolve(json.message);

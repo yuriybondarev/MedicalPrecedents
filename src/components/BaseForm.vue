@@ -31,7 +31,7 @@
             })
             .catch((error) => {
               bannerType = Banner.BANNER_ERROR;
-              bannerMessage = error;
+              bannerMessage = error.message;
             })
             .finally(async () => {
               await Banner.show(bannerMessage, bannerType);
@@ -51,7 +51,7 @@
             })
             .catch((error) => {
               bannerType = Banner.BANNER_ERROR;
-              bannerMessage = error;
+              bannerMessage = error.message;
             })
             .finally(async () => {
               await Banner.show(bannerMessage, bannerType);

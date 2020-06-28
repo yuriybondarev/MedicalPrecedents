@@ -3,9 +3,7 @@
     id="home-view-wrapper"
     class="basic-wrapper"
   >
-    <h1>
-      <fa-icon icon="book-medical"/>
-    </h1>
+    <h1>Документация</h1>
     <div id="documentation-wrapper">
       <DocumentationSection
         v-for="(document, index) in documentation"
@@ -36,7 +34,7 @@
 
 <style>
   h1 {
-    font-size: 1.6em;
+    font-size: 1.4em;
     text-align: center;
     padding-bottom: 10px;
     margin-bottom: 22px;

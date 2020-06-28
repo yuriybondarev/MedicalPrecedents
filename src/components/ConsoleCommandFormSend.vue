@@ -24,7 +24,7 @@
     methods: {
       submit(event) {
         if (!this.isBlocked) {
-          const URL = 'api/console.php';
+          const URL = '/api/console.php';
 
           let successCallback = (json) => {
             this.$store.commit('ADD_COMMAND', {

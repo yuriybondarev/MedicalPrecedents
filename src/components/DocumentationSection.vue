@@ -1,7 +1,10 @@
 <template>
   <div class="documentation-section">
-    <h2>{{ header }}</h2>
-    <div>
+    <h2 @click="isOpen = !isOpen">
+      <fa-icon :icon="isOpen ? 'minus-circle' : 'plus-circle'"/>
+      {{ header }}
+    </h2>
+    <div v-show="isOpen">
       <p>{{ description }}</p>
       <ul>
         <li
@@ -30,6 +33,11 @@
         type: Array,
         required: true
       }
+    },
+    data() {
+      return {
+        isOpen: false
+      };
     }
   };
 </script>
@@ -37,19 +45,28 @@
 <style>
   .documentation-section {
     background-color: #2f3439;
-    border-radius: 4px;
   }
 
   .documentation-section:not(:last-child) {
     margin-bottom: 20px;
   }
 
+  .documentation-section, .documentation-section h2 {
+    border-radius: 4px;
+  }
+
   .documentation-section h2 {
+    cursor: pointer;
+    position: sticky;
+    top: 0;
     background-color: #ee7147;
     padding: 10px;
-    border-radius: 4px 4px 0 0;
     text-align: center;
     text-transform: uppercase;
+  }
+
+  .documentation-section h2 svg {
+    margin-right: 1px;
   }
 
   .documentation-section > div {

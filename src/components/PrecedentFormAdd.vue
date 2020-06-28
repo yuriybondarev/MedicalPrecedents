@@ -261,7 +261,7 @@
     methods: {
       submit(event) {
         if (!this.isBlocked) {
-          const URL = 'api/add.php';
+          const URL = '/api/add.php';
           this.submitPost(event.target, URL);
         }
       }

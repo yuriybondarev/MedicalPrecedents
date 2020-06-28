@@ -419,7 +419,7 @@
     methods: {
       submit(event) {
         if (!this.isBlocked) {
-          const URL = 'api/find.php';
+          const URL = '/api/find.php';
           const params = AJAX.getParamsString(new FormData(event.target));
           
           let successCallback = (json) => {

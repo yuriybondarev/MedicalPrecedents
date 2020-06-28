@@ -28,7 +28,7 @@
     methods: {
       submit(event) {
         if (!this.isBlocked) {
-          const URL = 'api/excel.php';
+          const URL = '/api/excel.php';
           this.submitPost(event.target, URL);
         }
       },
