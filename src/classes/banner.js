@@ -4,6 +4,7 @@ export default {
   BANNER_ERROR: 0,
   BANNER_SUCCESS: 1,
   DELAY: 3000,
+  
   show(message, bannerId) {
     return new Promise((resolve) => {
       $store.commit('SWITCH_BANNER', bannerId);
