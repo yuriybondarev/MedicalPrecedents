@@ -40,13 +40,13 @@
     padding: 18px;
     border-radius: 4px;
     max-height: 50vh;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: auto;
     position: relative;
   }
 
   /* Полоса прокрутки */
   #console-monitor::-webkit-scrollbar { width: 8px; }
+  #console-monitor::-webkit-scrollbar:horizontal { height: 8px; }
   #console-monitor::-webkit-scrollbar-track-piece { background-color: #2f3439;}
   #console-monitor::-webkit-scrollbar-thumb { background-color: #ee7147; border-radius: 4px;}
 </style>

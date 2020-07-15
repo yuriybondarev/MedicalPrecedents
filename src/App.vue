@@ -18,7 +18,7 @@
       </transition>
     </main>
     <footer>
-      <p>© 2020 Евгений Миколенко (Fertnam)</p>
+      <p>© 2020 БИС 17-01</p>
     </footer>
     <transition
       mode="out-in"
@@ -85,6 +85,10 @@
   ::selection {
     color: #eee;
     background-color: #ee7147;
+  }
+
+  a, a:visited {
+    color: #ee7147;
   }
 
   button {
