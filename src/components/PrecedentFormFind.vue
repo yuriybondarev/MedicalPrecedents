@@ -37,27 +37,12 @@
         </div>
       </div>
       <div>
-        <label for="name-input">Имя:</label>
-        <input 
-          id="name-input" 
-          name="name" 
-        />
-      </div>
-      <div>
-        <label for="surname-input">Фамилия:</label>
-        <input 
-          id="surname-input" 
-          name="surname" 
-        />
-      </div>
-      <div>
         <label>Возраст:</label>
         <div class="min-max-wrapper">
           <input
             id="min-age-input"
             min="0"
             max="150"
-            required
             name="min-age"
             type="number"
             placeholder="Минимум"
@@ -66,7 +51,6 @@
             id="max-age-input"
             min="0"
             max="150"
-            required
             name="max-age"
             type="number"
             placeholder="Максимум"
@@ -74,14 +58,13 @@
         </div>
       </div>
       <div>
-        <label>Рост:</label>
+        <label>Рост (в метрах):</label>
         <div class="min-max-wrapper">
           <input
             id="min-height-input"
             min="0"
             max="3"
             step="any"
-            required
             name="min-height"
             type="number"
             placeholder="Минимум"
@@ -91,7 +74,6 @@
             min="0"
             max="3"
             step="any"
-            required
             name="max-height"
             type="number"
             placeholder="Максимум"
@@ -106,7 +88,6 @@
             min="0"
             max="700"
             step="any"
-            required
             name="min-weight"
             type="number"
             placeholder="Минимум"
@@ -116,7 +97,6 @@
             min="0"
             max="700"
             step="any"
-            required
             name="max-weight"
             type="number"
             placeholder="Максимум"

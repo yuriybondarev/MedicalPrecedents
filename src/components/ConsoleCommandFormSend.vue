@@ -4,7 +4,8 @@
     @submit.prevent="submit"
   >
     <input
-      name="console-command" 
+      name="console-command"
+      required
       placeholder="Введите запрос" 
     />
     <button>

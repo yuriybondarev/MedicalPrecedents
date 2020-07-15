@@ -6,7 +6,8 @@
     <input
       ref="fileInput"
       name="excel-file" 
-      accept=".xls,.xlsx" 
+      accept=".xls,.xlsx"
+      required
       type="file" 
       @change="fileChanged"
     />

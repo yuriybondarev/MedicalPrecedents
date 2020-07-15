@@ -38,38 +38,22 @@
         </div>
       </div>
       <div>
-        <label for="name-input">Имя:</label>
-        <input 
-          id="name-input"
-          name="name" 
-        />
-      </div>
-      <div>
-        <label for="surname-input">Фамилия:</label>
-        <input 
-          id="surname-input"
-          name="surname" 
-        />
-      </div>
-      <div>
         <label for="age-input">Возраст:</label>
         <input 
           id="age-input"
           min="0" 
-          max="150" 
-          required 
+          max="150"
           name="age" 
           type="number" 
         />
       </div>
       <div>
-        <label for="height-input">Рост:</label>
+        <label for="height-input">Рост (в метрах):</label>
         <input 
           id="height-input"
           min="0" 
           max="3" 
-          step="any" 
-          required 
+          step="any"
           name="height" 
           type="number" 
         />
@@ -80,8 +64,7 @@
           id="weight-input"
           min="0" 
           max="700" 
-          step="any" 
-          required 
+          step="any"
           name="weight" 
           type="number" 
         />

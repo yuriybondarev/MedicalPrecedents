@@ -4,7 +4,9 @@
       <fa-icon icon="terminal"/>
       {{ command.value }}
     </p>
-    <p>{{ command.result }}</p>
+    <p>
+      <pre>{{ command.result }}</pre>
+    </p>
   </div>
 </template>
 
