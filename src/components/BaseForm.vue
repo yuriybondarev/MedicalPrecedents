@@ -102,14 +102,6 @@
     transition: 500ms background-color;
   }
 
-  .form-model .min-max-wrapper {
-    display: flex;
-  }
-
-  .form-model .min-max-wrapper input:not(:last-child) {
-    margin-right: 12px;
-  }
-
   .form-model label:not(.not-block-label) {
     display: block;
     margin-bottom: 8px;

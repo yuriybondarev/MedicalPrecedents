@@ -37,71 +37,36 @@
         </div>
       </div>
       <div>
-        <label>Возраст:</label>
-        <div class="min-max-wrapper">
-          <input
-            id="min-age-input"
-            min="0"
-            max="150"
-            name="min-age"
-            type="number"
-            placeholder="Минимум"
-          />
-          <input
-            id="max-age-input"
-            min="0"
-            max="150"
-            name="max-age"
-            type="number"
-            placeholder="Максимум"
-          />
-        </div>
+        <label for="age-input">Возраст:</label>
+        <input 
+          id="age-input"
+          min="0" 
+          max="150"
+          name="age" 
+          type="number" 
+        />
       </div>
       <div>
-        <label>Рост (в метрах):</label>
-        <div class="min-max-wrapper">
-          <input
-            id="min-height-input"
-            min="0"
-            max="3"
-            step="any"
-            name="min-height"
-            type="number"
-            placeholder="Минимум"
-          />
-          <input
-            id="max-height-input"
-            min="0"
-            max="3"
-            step="any"
-            name="max-height"
-            type="number"
-            placeholder="Максимум"
-          />
-        </div>
+        <label for="height-input">Рост (в метрах):</label>
+        <input 
+          id="height-input"
+          min="0" 
+          max="3" 
+          step="any"
+          name="height" 
+          type="number" 
+        />
       </div>
       <div>
-        <label>Вес:</label>
-        <div class="min-max-wrapper">
-          <input
-            id="min-weight-input"
-            min="0"
-            max="700"
-            step="any"
-            name="min-weight"
-            type="number"
-            placeholder="Минимум"
-          />
-          <input
-            id="max-weight-input"
-            min="0"
-            max="700"
-            step="any"
-            name="max-weight"
-            type="number"
-            placeholder="Максимум"
-          />
-        </div>
+        <label for="weight-input">Вес:</label>
+        <input 
+          id="weight-input"
+          min="0" 
+          max="700" 
+          step="any"
+          name="weight" 
+          type="number" 
+        />
       </div>
       <div>
         <label for="type-input">Тип:</label>
@@ -131,256 +96,124 @@
         </select>
       </div>
       <div>
-        <label>Индекс массы тела (ИМТ):</label>
-        <div class="min-max-wrapper">
-          <input
-            id="min-bmi-input"
-            min="0"
-            step="any"
-            name="min-bmi"
-            type="number"
-            placeholder="Минимум"
-          />
-          <input
-            id="max-bmi-input"
-            min="0"
-            step="any"
-            name="max-bmi"
-            type="number"
-            placeholder="Максимум"
-          />
-        </div>
+        <label for="bmi-input">Индекс массы тела (ИМТ):</label>
+        <input 
+          id="bmi-input"
+          min="0" 
+          step="any" 
+          name="bmi" 
+          type="number" 
+        />
       </div>
       <div>
-        <label>Окружность талии (ОТ):</label>
-        <div class="min-max-wrapper">
-          <input
-            id="min-wc-input"
-            min="0"
-            step="any"
-            name="min-wc"
-            type="number"
-            placeholder="Минимум"
-          />
-          <input
-            id="max-wc-input"
-            min="0"
-            step="any"
-            name="max-wc"
-            type="number"
-            placeholder="Максимум"
-          />
-        </div>
+        <label for="wc-input">Окружность талии (ОТ):</label>
+        <input 
+          id="wc-input"
+          min="0" 
+          step="any" 
+          name="wc" 
+          type="number" 
+        />
       </div>
       <div>
-        <label>Индекс курения (ИК):</label>
-        <div class="min-max-wrapper">
-          <input
-            id="min-si-input"
-            min="0"
-            step="any"
-            name="min-si"
-            type="number"
-            placeholder="Минимум"
-          />
-          <input
-            id="max-si-input"
-            min="0"
-            step="any"
-            name="max-si"
-            type="number"
-            placeholder="Максимум"
-          />
-        </div>
+        <label for="si-input">Индекс курения (ИК):</label>
+        <input 
+          id="si-input"
+          min="0" 
+          step="any" 
+          name="si" 
+          type="number" 
+        />
       </div>
       <div>
-        <label>Систолическое артериальное давление (САД):</label>
-        <div class="min-max-wrapper">
-          <input
-            id="min-sbp-input"
-            min="0"
-            step="any"
-            name="min-sbp"
-            type="number"
-            placeholder="Минимум"
-          />
-          <input
-            id="max-sbp-input"
-            min="0"
-            step="any"
-            name="max-sbp"
-            type="number"
-            placeholder="Максимум"
-          />
-        </div>
+        <label for="sbp-input">Систолическое артериальное давление (САД):</label>
+        <input 
+          id="sbp-input"
+          min="0" 
+          step="any" 
+          name="sbp" 
+          type="number" 
+        />
       </div>
       <div>
-        <label>Диастолическое артериальное давление (ДАД):</label>
-        <div class="min-max-wrapper">
-          <input
-            id="min-dbp-input"
-            min="0"
-            step="any"
-            name="min-dbp"
-            type="number"
-            placeholder="Минимум"
-          />
-          <input
-            id="max-dbp-input"
-            min="0"
-            step="any"
-            name="max-dbp"
-            type="number"
-            placeholder="Максимум"
-          />
-        </div>
+        <label for="dbp-input">Диастолическое артериальное давление (ДАД):</label>
+        <input 
+          id="dbp-input"
+          min="0" 
+          step="any" 
+          name="dbp" 
+          type="number" 
+        />
       </div>
       <div>
-        <label>Cреднее артериальное давление (СрАД):</label>
-        <div class="min-max-wrapper">
-          <input
-            id="min-mbp-input"
-            min="0"
-            step="any"
-            name="min-mbp"
-            type="number"
-            placeholder="Минимум"
-          />
-          <input
-            id="max-mbp-input"
-            min="0"
-            step="any"
-            name="max-mbp"
-            type="number"
-            placeholder="Максимум"
-          />
-        </div>
+        <label for="mbp-input">Среднее артериальное давление (СрАД):</label>
+        <input 
+          id="mbp-input" 
+          min="0" 
+          step="any" 
+          name="mbp" 
+          type="number" 
+        />
       </div>
       <div>
-        <label>Пульсовое артериальное давление (ПАД):</label>
-        <div class="min-max-wrapper">
-          <input
-            id="min-pbp-input"
-            min="0"
-            step="any"
-            name="min-pbp"
-            type="number"
-            placeholder="Минимум"
-          />
-          <input
-            id="max-pbp-input"
-            min="0"
-            step="any"
-            name="max-pbp"
-            type="number"
-            placeholder="Максимум"
-          />
-        </div>
+        <label for="pbp-input">Пульсовое артериальное давление (ПАД):</label>
+        <input 
+          id="pbp-input" 
+          min="0" 
+          step="any" 
+          name="pbp" 
+          type="number" 
+        />
       </div>
       <div>
-        <label>Частота сердечных сокращений (ЧСС):</label>
-        <div class="min-max-wrapper">
-          <input
-            id="min-hr-input"
-            min="0"
-            step="any"
-            name="min-hr"
-            type="number"
-            placeholder="Минимум"
-          />
-          <input
-            id="max-hr-input"
-            min="0"
-            step="any"
-            name="max-hr"
-            type="number"
-            placeholder="Максимум"
-          />
-        </div>
+        <label for="hr-input">Частота сердечных сокращений (ЧСС):</label>
+        <input 
+          id="hr-input" 
+          min="0" 
+          step="any" 
+          name="hr" 
+          type="number" 
+        />
       </div>
       <div>
-        <label>Минимальный аортальный индекс атерогенности (ИА аорт.):</label>
-        <div class="min-max-wrapper">
-          <input
-            id="min-aai-input"
-            min="0"
-            step="any"
-            name="min-aai"
-            type="number"
-            placeholder="Минимум"
-          />
-          <input
-            id="max-aai-input"
-            min="0"
-            step="any"
-            name="max-aai"
-            type="number"
-            placeholder="Максимум"
-          />
-        </div>
+        <label for="aai-input">Аортальный индекс атерогенности (ИА аорт.):</label>
+        <input 
+          id="aai-input" 
+          min="0" 
+          step="any" 
+          name="aai" 
+          type="number" 
+        />
       </div>
       <div>
-        <label>ED:</label>
-        <div class="min-max-wrapper">
-          <input
-            id="min-ed-input"
-            min="0"
-            step="any"
-            name="min-ed"
-            type="number"
-            placeholder="Минимум"
-          />
-          <input
-            id="max-ed-input"
-            min="0"
-            step="any"
-            name="max-ed"
-            type="number"
-            placeholder="Максимум"
-          />
-        </div>
+        <label for="ed-input">ED:</label>
+        <input 
+          id="ed-input" 
+          min="0" 
+          step="any" 
+          name="ed" 
+          type="number" 
+        />
       </div>
       <div>
-        <label>ИПИ:</label>
-        <div class="min-max-wrapper">
-          <input
-            id="min-fdi-input"
-            min="0"
-            step="any"
-            name="min-fdi"
-            type="number"
-            placeholder="Минимум"
-          />
-          <input
-            id="max-fdi-input"
-            min="0"
-            step="any"
-            name="max-fdi"
-            type="number"
-            placeholder="Максимум"
-          />
-        </div>
+        <label for="fdi-input">ИПИ:</label>
+        <input 
+          id="fdi-input" 
+          min="0" 
+          step="any" 
+          name="fdi" 
+          type="number" 
+        />
       </div>
       <div>
-        <label>RT:</label>
-        <div class="min-max-wrapper">
-          <input
-            id="min-rt-input"
-            min="0"
-            step="any"
-            name="min-rt"
-            type="number"
-            placeholder="Минимум"
-          />
-          <input
-            id="max-rt-input"
-            min="0"
-            step="any"
-            name="max-rt"
-            type="number"
-            placeholder="Максимум"
-          />
-        </div>
+        <label for="rt-input">RT:</label>
+        <input 
+          id="rt-input" 
+          min="0" 
+          step="any" 
+          name="rt" 
+          type="number" 
+        />
       </div>
     </div>
     <button>Найти прецеденты</button>

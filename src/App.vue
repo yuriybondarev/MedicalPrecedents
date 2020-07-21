@@ -1,24 +1,26 @@
 <template>
   <div id="app">
-    <header>
-      <router-link :to="{name: 'Home'}">
-        <MedicineLogo/>
-      </router-link>
-    </header>
-    <nav>
-      <MenuList/>
-    </nav>
-    <main>
-      <transition
-        mode="out-in"
-        enter-active-class="animate__animated animate__fadeIn animate__faster"
-        leave-active-class="animate__animated animate__fadeOut animate__faster"
-      >
-        <router-view/>
-      </transition>
-    </main>
+    <div id="container">
+      <header>
+        <router-link :to="{name: 'Home'}">
+          <MedicineLogo/>
+        </router-link>
+      </header>
+      <nav>
+        <MenuList/>
+      </nav>
+      <main>
+        <transition
+          mode="out-in"
+          enter-active-class="animate__animated animate__fadeIn animate__faster"
+          leave-active-class="animate__animated animate__fadeOut animate__faster"
+        >
+          <router-view/>
+        </transition>
+      </main>
+    </div>
     <footer>
-      <p>© 2020 БИС 17-01</p>
+      <p>© 2020 БИС 17-01 (ВГУЭС)</p>
     </footer>
     <transition
       mode="out-in"
@@ -93,6 +95,13 @@
 
   button {
     cursor: pointer;
+  }
+
+  #app {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
   }
 
   header, main, footer {

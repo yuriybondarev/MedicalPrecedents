@@ -9,8 +9,8 @@
       enter-active-class="animate__animated animate__flipInX animate__fast"
     >
       <ConsoleCommand
-        v-for="(command, index) in commands" 
-        :key="index" 
+        v-for="command in commands" 
+        :key="command" 
         :command="command"
       />
     </transition-group>
