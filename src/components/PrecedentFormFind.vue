@@ -81,6 +81,12 @@
           id="anamnesys-select" 
           multiple
         >
+          <option 
+            value="0" 
+            disabled
+          >
+            Выберите анамнезы
+          </option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -90,6 +96,12 @@
           id="vessels-state-select" 
           multiple
         >
+          <option 
+            value="0" 
+            disabled
+          >
+            Выберите состояния сосудов
+          </option>
           <option value="1">Риск</option>
           <option value="2">Требуется наблюдение</option>
           <option value="3">Высокий риск</option>

@@ -92,21 +92,6 @@
           <option value="2">2</option>
           <option value="3">3</option>
         </select>
-        <select 
-          id="vessels-state-select"
-          name="vessels-state" 
-        >
-          <option 
-            value="0" 
-            disabled 
-            selected
-          >
-            Выберите состояние сосудов
-          </option>
-          <option value="1">Риск</option>
-          <option value="2">Требуется наблюдение</option>
-          <option value="3">Высокий риск</option>
-        </select>
       </div>
       <div>
         <label for="bmi-input">Индекс массы тела (ИМТ):</label>
